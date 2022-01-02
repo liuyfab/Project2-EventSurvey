@@ -1,0 +1,21 @@
+<div>
+  <section>
+    <a href="/dashboard/add-post"><button class="btn">Create New Post</button></a>
+  </section>
+  
+ 
+  {{!-- {{#if posts.length}} --}}
+  <section>
+    <h2>Your Posts</h2>
+    <div class="post-list">
+      {{#each posts as |post|}}
+      <div>
+        {{> post-info post}}
+          {{!-- <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a> --}}
+      </div>
+      {{/each}}
+    </div>
+  </section>
+</div>
+
+<!--<script src="/javascript/add-post.js"></script> -->
