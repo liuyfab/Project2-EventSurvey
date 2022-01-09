@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
+const { Post, User, Comment, Save } = require('../models');
 const withAuth = require('../utils/auth');
 
 //getting data for post, rendering dashboard using the data with authorization
 router.get('/', withAuth, (req, res) => {
   // console.log(req.session);
   console.log('======================');
-  Post.findAll({
+  Promise.all([Post.findAll({
     where: {
       user_id: req.session.user_id
     },
@@ -31,10 +31,35 @@ router.get('/', withAuth, (req, res) => {
         attributes: ['username']
       }
     ]
+  }),
+  Save.findAll({
+    where: {
+      user_id: req.session.user_id
+    },
+    include: [
+      {
+        model: Post,
+        attributes: [
+          'id',
+          'post_text',
+          'title',
+          'created_at',
+        ],
+        include: [
+          {
+            model: User, 
+            attributes: ['username']
+          }
+        ]
+      }
+    ]
   })
-    .then(dbPostData => {
+])
+  .then(([dbPostData, dbSaveData]) => {
+    console.log(dbSaveData)
       const posts = dbPostData.map(post => post.get({ plain: true }));
-      res.render('dashboard', { posts, loggedIn: true });
+      const saved = dbSaveData.map(save => save.post.get({ plain: true }));
+      res.render('dashboard', { posts, saved, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
