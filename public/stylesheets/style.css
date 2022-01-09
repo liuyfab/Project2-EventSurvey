@@ -8,8 +8,8 @@ body, html {
   margin: 0;
   font-family: sans-serif;
   color: #333;
-  background-image: linear-gradient(#e800ff66, #00ffff47);
-  
+  background-image: linear-gradient(#ccaccf66, #03080a47);
+
 }
 
 a {
@@ -24,7 +24,7 @@ a:hover {
 }
 
 button {
-  background-color:#FF643F;
+  background-color: #714882;
   border: 0;
   padding: 1%;
   font-weight: bold;
@@ -87,7 +87,7 @@ form label {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  background-color: rgb(125, 133, 110);
+  background-image: linear-gradient(#1d1b1d66, #7d8e9547);
   border-bottom: 10px solid var(--bg-color);
 }
 
@@ -124,7 +124,7 @@ main {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #0c0c0c;
+  color: #7c1414;
   font-size: 100%;
   font-weight: bold;
   transition: color .1s;
@@ -145,7 +145,7 @@ main {
 }
 
 .post {
-  margin-bottom: 2%;
+  margin-bottom: 5%;
   line-height: 150%;
 }
 
@@ -200,11 +200,11 @@ main {
   font-family: sans-serif;
   font-size: 14px;
 }
-
+ /* Footer section*/
 footer {
   border-top: 1px solid #ccc;
   display: flex;
   justify-content: center;
-  padding: 1%;
-  font-size: 110%;
+  padding: 5%;
+  font-size: 150%;
 }
