@@ -10,6 +10,7 @@ https://blooming-wildwood-16551.herokuapp.com/
 # Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
+* Authors and Acknowledgment
 * [License](#license)
 
 # Installation
@@ -18,6 +19,12 @@ There is no installation required for this site, it is currently being hosted on
 # Usage
 This application is fully deployed in: 
 https://blooming-wildwood-16551.herokuapp.com/
+
+# Authors and Acknowledgment
+Yongfeng
+Pabitra Tamang
+Blane Bussey
+Bryan Acosta
 
 ## License
   # MIT
