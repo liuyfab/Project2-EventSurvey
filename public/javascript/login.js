@@ -1,3 +1,4 @@
+//attempts to login the user, if successful bring user to the dashboard if unsuccessful alert user
 async function loginFormHandler(event) {
   event.preventDefault();
 console.log("login button clicked"); 

@@ -1,3 +1,4 @@
+//attempts to create a new user, if successful brings user to the dashboard, if unsuccessful alerts user
 async function signupFormHandler(event) {
     event.preventDefault();
   

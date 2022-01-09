@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+//getting data for post, rendering dashboard using the data with authorization
 router.get('/', withAuth, (req, res) => {
   // console.log(req.session);
   console.log('======================');
@@ -41,7 +42,7 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
-// edit an individual post
+// get post by id, use that data to render the edit post page with authorization
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findByPk(req.params.id, {
     attributes: [
@@ -82,7 +83,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
     });
 });
 
-// add a new post (no parameters)
+// render the new post page with authorization
 router.get('/add-post/', withAuth, (req, res) => {
   res.render('add-post', {
     loggedIn: true

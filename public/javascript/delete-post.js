@@ -1,3 +1,4 @@
+//attempts to delete a post by its id, if successful redirect user to the dashboard, if unsuccessful alert user 
 async function deleteFormHandler(event) {
   event.preventDefault();
 

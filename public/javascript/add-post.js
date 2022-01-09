@@ -1,3 +1,4 @@
+//attempts to submit new post request, if successful navigates to dashboard - if unsuccessful alert user
 async function newFormHandler(event) {
   event.preventDefault();
 

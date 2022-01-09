@@ -1,3 +1,4 @@
+//attempts to submit a post request, if successful navigates user to dashboard, if unsuccessful alert user 
 async function editFormHandler(event) {
   event.preventDefault();
 

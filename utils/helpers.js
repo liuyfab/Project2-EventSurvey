@@ -1,9 +1,11 @@
 module.exports = {
+  //formats a date as a string in m/d/yyyy
   format_date: date => {
     return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(
       date
     ).getFullYear()}`;
   },
+  //removes protocol, www prefix and returns only the website host name
   format_url: url => {
     return url
       .replace('http://', '')
@@ -12,6 +14,7 @@ module.exports = {
       .split('/')[0]
       .split('?')[0];
   },
+  //adding s to word that needs to be pluralized
   format_plural: (word, amount) => {
     if (amount !== 1) {
       return `${word}s`;

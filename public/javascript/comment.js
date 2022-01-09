@@ -1,3 +1,4 @@
+//attempting to submit create comment request, if successful reload the post page if unsuccessful alert the user 
 async function commentFormHandler(event) {
   event.preventDefault();
 

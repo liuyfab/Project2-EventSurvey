@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
-// get all users
+// get all users but don't show password
 router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] }
@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
     });
 });
 
+//gets all user id's post, comments, and posts that comments were made under
 router.get('/:id', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
@@ -47,6 +48,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+//creating a new user. login data saved inside cookie for client
 router.post('/', (req, res) => {
   // expects {username: '', password: ''}
   User.create({
@@ -68,6 +70,7 @@ router.post('/', (req, res) => {
     });
 });
 
+//login process - checking username and password, then stashing login data inside the session cookie
 router.post('/login', (req, res) => {
   User.findOne({
     where: {
@@ -96,6 +99,7 @@ router.post('/login', (req, res) => {
   });
 });
 
+//deleting the login data to logout 
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -107,8 +111,8 @@ router.post('/logout', (req, res) => {
   }
 });
 
+//updating user
 router.put('/:id', (req, res) => {
- 
   User.update(req.body, {
     individualHooks: true,
     where: {
@@ -128,6 +132,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
+//deleting user 
 router.delete('/:id', (req, res) => {
   User.destroy({
     where: {

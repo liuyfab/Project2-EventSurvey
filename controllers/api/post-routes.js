@@ -3,7 +3,7 @@ const sequelize = require('../../config/connection');
 const { Post, User, Comment, Userpost } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// get all users
+// get all posts
 router.get('/', (req, res) => {
   console.log('======================');
   Post.findAll({
@@ -35,6 +35,7 @@ router.get('/', (req, res) => {
     });
 });
 
+//getting individual post by id
 router.get('/:id', (req, res) => {
   Post.findOne({
     where: {
@@ -74,6 +75,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+//creating post with authorization
 router.post('/', withAuth, (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_text: 'a bunch of interesting stuff, user_id: 1}
   Post.create({
@@ -88,7 +90,7 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
-
+//update post with authorization
 router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
@@ -114,6 +116,7 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
+//delete a post by its id with authorization
 router.delete('/:id', withAuth, (req, res) => {
   console.log('id', req.params.id);
   Post.destroy({
