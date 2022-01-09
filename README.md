@@ -21,9 +21,9 @@ This application is fully deployed in:
 https://blooming-wildwood-16551.herokuapp.com/
 
 # Authors and Acknowledgment
-Yongfeng
-Pabitra Tamang
-Blane Bussey
+Yongfeng,
+Pabitra Tamang,
+Blane Bussey, and
 Bryan Acosta
 
 ## License
