@@ -8,7 +8,8 @@ body, html {
   margin: 0;
   font-family: sans-serif;
   color: #333;
-  background-color: #aac0a8;
+  background-image: linear-gradient(#e800ff66, #00ffff47);
+  
 }
 
 a {
