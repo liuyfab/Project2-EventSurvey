@@ -20,6 +20,8 @@ There is no installation required for this site, it is currently being hosted on
 This application is fully deployed in: 
 https://blooming-wildwood-16551.herokuapp.com/
 
+![Screenshot (40)](https://user-images.githubusercontent.com/90426266/148706499-0d2cd237-e13b-4a3d-a2b3-a728ee8c65c2.png)
+
 # Authors and Acknowledgment
 Yongfeng,
 Pabitra Tamang,
