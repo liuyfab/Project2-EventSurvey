@@ -16,6 +16,16 @@
       {{/each}}
     </div>
   </section>
+  <section>
+    <h2>Saved Posts</h2>
+    <div class="post-list">
+       {{#each saved as |post|}}
+      <div>
+        {{> post-info post}}
+      </div>
+      {{/each}}
+    </div>
+  </section>
 </div>
 
 <!--<script src="/javascript/add-post.js"></script> -->
